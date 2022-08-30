@@ -9,6 +9,7 @@
             <PatternLayout pattern="%d [%t] %-5p %c - %m%n"/>
             <ThresholdFilter level="trace" onMatch="ACCEPT" onMismatch="DENY"/>
         </Console>
+
         <RollingFile name="infoLog" fileName="${logPath}/multidb_info.log"
                      filePattern="${logPath}/multidb_info-%d{yyyy-MM-dd}.log" append="true" immediateFlush="true">
             <PatternLayout pattern="%d [%t] %-5p %c - %m%n" />
@@ -36,6 +37,7 @@
             </Filters>
         </RollingFile>
     </Appenders>
+
     <Loggers>
         <AsyncLogger name="org.springframework.*" level="INFO"/>
         <AsyncLogger name="com.rick" level="INFO" additivity="false">
